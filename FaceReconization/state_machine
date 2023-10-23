@@ -1,0 +1,24 @@
+digraph finite_state_machine {
+    rankdir = LR;
+    size = "8,5"
+     
+    node [shape = doublecircle]; 
+     
+    A B D F G;
+     
+   node [shape = circle];
+    
+   A[ label = "图片" ]
+   B[ label = "成功" ]
+   C[ label = "错误" ]
+   D[ label = "无效输入" ]
+   E[ label = "输入姓名" ]
+   F[ label = "补充训练集" ]
+   G[ label = "退出" ]
+   A -> B [ label = "识别正确" ];
+   A -> C [ label = "识别错误" ];
+   A -> D [ label = "无人脸或多张人脸" ];
+   C -> E [ label = "手动勘误" ];
+   E -> F [ label = "成功输入" ];
+   E -> G [ label = "错误输入" ];
+}
